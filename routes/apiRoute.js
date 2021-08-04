@@ -8,7 +8,6 @@ module.exports = (app) => {
             password: req.body.password
         }).then(dbUser => {
             res.json(dbUser)
-            console.log("new user: ", dbUser)
         })
     })
 
@@ -19,7 +18,7 @@ module.exports = (app) => {
      app.get("/api/user_data", function(req, res) {
         if (!req.user) {
         res.json({message:"log in first"});
-        } else {console.log("hello there", req.user)
+        } else {
             res.json({
             userName: req.user.userName,
             });
